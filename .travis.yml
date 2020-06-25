@@ -2,4 +2,4 @@ language: java
 jdk:
   - oraclejdk13
 script:
-  - mvn -Dtest=MainFrameTest test
+  - mvn clean install && mvn test -B

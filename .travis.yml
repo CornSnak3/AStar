@@ -2,4 +2,4 @@ language: java
 jdk:
   - oraclejdk13
 script:
-  - mvn test
+  - mvn clean package test

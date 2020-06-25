@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
-import java.util.stream.Collectors;
 
 public class RouteFinder<T extends GraphNode> {
     private final Graph<T> graph;
@@ -28,11 +27,11 @@ public class RouteFinder<T extends GraphNode> {
         openSet.add(start);
 
         while (!openSet.isEmpty()) {
-            System.out.println("Очередь содержит: " + openSet.stream().map(RouteNode::getCurrent).collect(Collectors.toSet()));
+            // System.out.println("Очередь содержит: " + openSet.stream().map(RouteNode::getCurrent).collect(Collectors.toSet()));
             RouteNode<T> next = openSet.poll();
-            System.out.println("Текущий город:\t" + next);
+            // System.out.println("\u001B[32mТекущий город:\t" + next + "\u001B[0m");
             if (next.getCurrent().equals(to)) {
-                System.out.println("Город назначения найден!");
+                // System.out.println("Город назначения найден!");
 
                 List<T> route = new ArrayList<>();
                 RouteNode<T> current = next;
@@ -41,7 +40,7 @@ public class RouteFinder<T extends GraphNode> {
                     current = allNodes.get(current.getPrevious());
                 } while (current != null);
 
-                System.out.println("Маршрут: " + route);
+                // System.out.println("Маршрут: " + route);
                 return route;
             }
 
@@ -55,7 +54,7 @@ public class RouteFinder<T extends GraphNode> {
                     nextNode.setRouteScore(newScore);
                     nextNode.setEstimatedScore(newScore + targetScorer.computeCost(connection, to));
                     openSet.add(nextNode);
-                    System.out.println("Найден маршрут:\t" + nextNode);
+                    // System.out.println("Найден маршрут:\t" + nextNode);
                 }
             });
         }

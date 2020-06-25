@@ -13,7 +13,7 @@ public class Graph<T extends GraphNode> {
         this.nodes = nodes;
         this.connections = connections;
     }
-
+    
     public T getNode(String id) {
         return nodes.stream()
                 .filter(node -> node.getId().equals(id))

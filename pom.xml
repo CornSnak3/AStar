@@ -11,6 +11,12 @@
         <maven.compiler.target>13</maven.compiler.target>
     </properties>
 
+        <build>
+            <sourceDirectory>src/main/java</sourceDirectory>
+            <testSourceDirectory>src/test/java</testSourceDirectory>
+        </build>
+
+
     <dependencies>
         <dependency>
             <groupId>org.assertj</groupId>

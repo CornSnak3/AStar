@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ru.suai.ukpo.lab2;
+package test.ru.suai.ukpo.lab2;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import org.assertj.swing.edt.FailOnThreadViolationRepaintManager;
@@ -14,6 +14,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import ru.suai.ukpo.lab2.MainFrame;
 
 public class MainFrameTest {
     private FrameFixture window;
